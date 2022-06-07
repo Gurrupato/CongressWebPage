@@ -25,3 +25,13 @@
     text-align: center;
     word-wrap: break-word;
 }
+
+.cajaDeFiltros{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+.selectorEstados{
+    max-width: 300px;
+}

@@ -39,7 +39,7 @@
       <div class=""><img src="Images/demo/logo.png" alt="Logo" /></div>
     </div>
 
-    <!-- Nav bar -->
+    <!-- Navbar -->
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
@@ -54,12 +54,11 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a
-                  class="nav-link active"
+                  class="nav-link"
                   aria-current="page"
                   href="ProPublicaCongress.html"
                   >Home</a
@@ -78,18 +77,17 @@
                   Congress113
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <a class="dropdown-item" href="House.html">House</a>
-                  </li>
+                  <li><a class="dropdown-item" href="House.html">House</a></li>
                   <li>
                     <a class="dropdown-item" href="Senate.html">Senate</a>
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="PartyLoyalty.html">Party Loyalty</a>
+                <a class="nav-link active" href="PartyLoyalty.html"
+                  >Party Loyalty</a
+                >
               </li>
-              <li class="nav-item"></li>
             </ul>
             <form class="d-flex">
               <input
@@ -107,82 +105,27 @@
       </nav>
     </div>
 
-    <!-- Texto Principal -->
+    <!-- Tabla de Politicos -->
+    <div class="container table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Id</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>State</th>
+            <th>Party</th>
+            <th>Seniority</th>
+            <th>Votes</th>
+            <th>Missed Votes</th>
+            <th>Votes with Party %</th>
+            <th>Votes against Party %</th>
+            <th>% Missed Votes %</th>
+          </tr>
+        </thead>
 
-    <div class="container-lg">
-      <h1>Senator</h1>
-      <p>
-        First convened in 1789, the composition and powers of the Senate are
-        established in Article One of the U.S. Constitution. Each state is
-        represented by two senators, regardless of population, who serve
-        staggered six-year terms. The Senate has several exclusive powers not
-        granted to the House, including consenting to treaties as a precondition
-        to their ratification and consenting to or confirming appointments of
-        Cabinet secretaries, federal judges, other federal executive officials,
-        military officers, regulatory officials, ambassadors, and other federal
-        uniformed officers, as well as trial of federal officials impeached by
-        the House.
-      </p>
-    </div>
-
-    <!-- Tabla Principal -->
-    <div class="container">
-      <div class="row align-items-start headTableContent">
-        <div class="col">Name</div>
-        <div class="col">Party</div>
-        <div class="col">State</div>
-        <div class="col">Years in Office</div>
-        <div class="col">% Votes With Party</div>
-      </div>
-      <div class="row align-items-center tableContent">
-        <div class="col">Lamar Alexander</div>
-        <div class="col">R</div>
-        <div class="col">TN</div>
-        <div class="col">11</div>
-        <div class="col">86</div>
-      </div>
-      <div class="row align-items-center tableContent">
-        <div class="col">Kelly Ayotte</div>
-        <div class="col">R</div>
-        <div class="col">NH</div>
-        <div class="col">3</div>
-        <div class="col">81</div>
-      </div>
-      <div class="row align-items-center tableContent">
-        <div class="col">Tammy Baldwin</div>
-        <div class="col">D</div>
-        <div class="col">WI</div>
-        <div class="col">1</div>
-        <div class="col">99</div>
-      </div>
-      <div class="row align-items-center tableContent">
-        <div class="col">John Barrasso</div>
-        <div class="col">R</div>
-        <div class="col">WY</div>
-        <div class="col">7</div>
-        <div class="col">92</div>
-      </div>
-      <div class="row align-items-center tableContent">
-        <div class="col">Max Baucus</div>
-        <div class="col">D</div>
-        <div class="col">MT</div>
-        <div class="col">35</div>
-        <div class="col">90</div>
-      </div>
-      <div class="row align-items-center tableContent">
-        <div class="col">Mark Begich</div>
-        <div class="col">D</div>
-        <div class="col">AK</div>
-        <div class="col">5</div>
-        <div class="col">96</div>
-      </div>
-      <div class="row align-items-end tableContent">
-        <div class="col">Michael Bennet</div>
-        <div class="col">D</div>
-        <div class="col">CO</div>
-        <div class="col">5</div>
-        <div class="col">98</div>
-      </div>
+        <tbody class="table" id="data-output"></tbody>
+      </table>
     </div>
 
     <!-- Footer -->
@@ -195,5 +138,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="loyaltyJavascript.js"></script>
   </body>
 </html>

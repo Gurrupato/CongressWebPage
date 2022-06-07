@@ -77,7 +77,7 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Attendance
+                  Congress113
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="House.html">House</a></li>
@@ -87,7 +87,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Party Loyalty</a>
+                <a class="nav-link" href="PartyLoyalty.html">Party Loyalty</a>
               </li>
               <li class="nav-item"></li>
             </ul>
@@ -134,16 +134,103 @@
       
     </div>
 
+    <div class="container lineAcross">  
+    </div>
+
+     <div class="container cajaDeFiltros">
+      <div class="row">
+        <div class="col">
+            <p><b>Filtrar por Partido:</b></p>
+            <!-- Checkboxes -->
+            <!-- Republican -->
+            <div class="form-check-inline form-switch">
+              <input
+                class="form-check-input partyCheckbox"
+                type="checkbox"
+                value="R"
+                id="republicanCheckbox"
+                onclick="fetchCongress()"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                Republicans
+              </label>
+            </div>
+            <!-- Democrats -->
+            <div class="form-check-inline form-switch">
+              <input
+                class="form-check-input partyCheckbox"
+                type="checkbox"
+                value="D"
+                id="democratCheckbox"
+                onclick="fetchCongress()"
+              />
+              <label class="form-check-label" for="flexCheckChecked">
+                Democrats
+              </label>
+            </div>
+            <!-- Independents -->
+            <div class="form-check-inline form-switch">
+              <input
+                class="form-check-input partyCheckbox"
+                type="checkbox"
+                value="ID"
+                id="independentCheckbox"
+                onclick="fetchCongress()"
+              />
+              <label class="form-check-label" for="flexCheckChecked">
+                Independents
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Dropmdown States -->
+        <div class="selectorEstados">
+        <div class="col" id="tableStates">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="stateSelector"
+            onchange="fetchCongress()"
+          >
+            <option value="" selected>Select State</option>
+          </select>
+          </div>
+        
+      </div>
+    </div>
+    <!-- Tabla de Politicos -->
+    <div class="container table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>First name</th>
+            <th>Middle name</th>
+            <th>Last name</th>
+            <th>State</th>
+            <th>Birth</th>
+            <th>Gender</th>
+            <th>Party</th>
+            <th>Twitter</th>
+            <th>Seniority</th>
+          </tr>
+        </thead>
+
+        <tbody class="table" id="data-output"></tbody>
+      </table>
+    </div>
+    
     <!-- Footer -->
     <footer class="fixed-bottom">
       "&copy; 2022 TGIF | All Rights Reserved"
     </footer>
 
-    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="doubleFilterHouse.js"></script>
   </body>
 </html>
