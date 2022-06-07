@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>TGIF</title>
+
+    <link rel="stylesheet" href="ProPublicaCongressCSS.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="Images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="Images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="Images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="Images/site.webmanifest" />
+    <link rel="mask-icon" href="Images/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body>
+    <div>
+      <div class=""><img src="Images/demo/logo.png" alt="Logo" /></div>
+    </div>
+
+    <!-- Navbar -->
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="ProPublicaCongress.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Congress113.html">Congress 113</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Attendance
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="House.html">House</a></li>
+                  <li>
+                    <a class="dropdown-item active" href="Senate.html"
+                      >Senate</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Party Loyalty</a>
+              </li>
+              <li class="nav-item"></li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="container">
+            <p><b>Filtrar por Partido:</b></p>
+            <!-- Checkboxes -->
+            <!-- Republican -->
+            <div class="form-check-inline form-switch">
+              <input
+                class="form-check-input partyCheckbox"
+                type="checkbox"
+                value="R"
+                id="republicanCheckbox"
+                onclick="fetchCongress()"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                Republicans
+              </label>
+            </div>
+            <!-- Democrats -->
+            <div class="form-check-inline form-switch">
+              <input
+                class="form-check-input partyCheckbox"
+                type="checkbox"
+                value="D"
+                id="democratCheckbox"
+                onclick="fetchCongress()"
+              />
+              <label class="form-check-label" for="flexCheckChecked">
+                Democrats
+              </label>
+            </div>
+            <!-- Independents -->
+            <div class="form-check-inline form-switch">
+              <input
+                class="form-check-input partyCheckbox"
+                type="checkbox"
+                value="ID"
+                id="independentCheckbox"
+                onclick="fetchCongress()"
+              />
+              <label class="form-check-label" for="flexCheckChecked">
+                Independents
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Dropmdown States -->
+        <div class="col" id="tableStates">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="stateSelector"
+            onchange="fetchCongress()"
+          >
+            <option value="" selected>Select State</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- Tabla de Politicos -->
+    <div class="container table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>First name</th>
+            <th>Middle name</th>
+            <th>Last name</th>
+            <th>State</th>
+            <th>Birth</th>
+            <th>Gender</th>
+            <th>Party</th>
+            <th>Twitter</th>
+            <th>Seniority</th>
+          </tr>
+        </thead>
+
+        <tbody class="table" id="data-output"></tbody>
+      </table>
+    </div>
+
+    <!-- Linea -->
+    <div class="container lineAcross"><p></p></div>
+    <!-- Footer -->
+    <footer class="fixed-bottom">
+      "&copy; 2022 TGIF | All Rights Reserved"
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- <script src="pruebaCongressScript.js"></script> -->
+    <script src="doubleFilter.js"></script>
+  </body>
+</html>

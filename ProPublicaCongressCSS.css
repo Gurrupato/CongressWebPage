@@ -1,0 +1,27 @@
+.tableContent{
+    text-align: center;
+    border: 1px solid gray;
+}
+
+.headTableContent{
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid gray;
+}
+
+.headTableContentNB {
+    text-align: center;
+    font-weight: bold;
+}
+
+.lineAcross{
+    border: 0.1px solid gray;
+    width: 90%;
+    height: 0.1px;
+    margin-top: 50px;
+}
+
+.senateTable{
+    text-align: center;
+    word-wrap: break-word;
+}
