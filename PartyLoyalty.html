@@ -105,11 +105,30 @@
       </nav>
     </div>
 
+    <div class="container">
+      <button class="btn btn-primary">Numero de Filas</button>
+      <button type="button" class="btn btn-primary" onclick="sumar1()">
+        +1
+      </button>
+      <button
+        id="marcadorFilas"
+        type="button"
+        class="btn btn-primary"
+        value="10"
+      >
+        10
+      </button>
+      <button type="button" class="btn btn-primary" onclick="restar1()">
+        -1
+      </button>
+    </div>
+
     <!-- Tabla de Politicos -->
     <div class="container table-responsive">
       <table class="table">
         <thead class="thead-dark">
           <tr>
+            <th></th>
             <th>Id</th>
             <th>First name</th>
             <th>Last name</th>
